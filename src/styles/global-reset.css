@@ -1,0 +1,25 @@
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* box sizing : border box  */
+* {
+  box-sizing : border-box;
+}
+
+html,
+body,
+div#root {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
