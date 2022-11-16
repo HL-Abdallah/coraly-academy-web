@@ -8,7 +8,6 @@ const users = [{
     username: "Admin",
 }]
 
-
 function login(email, password) {
     return users.find(user => user.email === email && user.password === password) || "404";
 }

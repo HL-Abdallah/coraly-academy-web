@@ -1,10 +1,15 @@
+import { IconButton } from "@mui/material";
 import React from "react";
 import CustomDrawer from "./CustomDrawer";
+import CustomIconButton from "./CustomIconButton";
+import BoardMenuIcon from "/icons/BoardMenu.png"
 
 const BoardLayout = ({ children }) => {
   return (
     <>
-      <CustomDrawer open={true} />
+      <CustomDrawer open={true} >
+        <CustomIconButton src={BoardMenuIcon} alt="Menu icon"/>
+      </CustomDrawer>
       <div
         style={{
           display: "flex",

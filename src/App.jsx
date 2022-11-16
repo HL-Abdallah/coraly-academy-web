@@ -9,6 +9,7 @@ import ResetPassword from "./routes/reset-password/ResetPassword";
 import ResetEmailSent from "./routes/reset-password/ResetEmailSent";
 import ConfirmPassword from "./routes/reset-password/ConfirmPassword";
 import Board from "./routes/board/Board";
+import ErrorPage from "./routes/404/ErrorPage";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <CssBaseline />
       <BrowserRouter>
         <Routes>
-          <Route path="*" element={<h2>404 not found</h2>} />
+          <Route path="*" element={<ErrorPage />} />
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" index element={<Login />} />
           <Route path="/signup">
