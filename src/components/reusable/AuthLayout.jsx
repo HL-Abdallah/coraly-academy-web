@@ -1,6 +1,6 @@
 import { Paper } from "@mui/material";
 import React from "react";
-import logo from "/images/logo.png";
+import logo from "/images/Logo.png";
 
 const AuthLayout = ({ children }) => {
   const leftPanelStyles = {
