@@ -6,6 +6,10 @@ const users = [{
     email: "admin@LD.com",
     password: "secret",
     username: "Admin",
+}, {
+    email: "fn@ld.com",
+    password: "123",
+    username: "Fabrizio Nillo"
 }]
 
 function login(email, password) {

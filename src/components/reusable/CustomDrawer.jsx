@@ -3,13 +3,14 @@ import { Drawer } from "@mui/material";
 
 const DRAWER_WIDTH = 80;
 
-const Component = styled(Drawer)((props) => ({
-  "& .MuiDrawer-paper": {
-    width: DRAWER_WIDTH,
-    backgroundColor: "#04385A",
-    boxSizing: "border-box",
-  },
-}));
+const Component = styled(Drawer, { name: "name_xyz", label: "label_xyz" })(
+  (props) => ({
+    "& .MuiDrawer-paper": {
+      width: props.drawerWidth || DRAWER_WIDTH,
+      backgroundColor: "#04385A",
+    },
+  })
+);
 
 export default function CustomDrawer(props) {
   return (
@@ -18,6 +19,21 @@ export default function CustomDrawer(props) {
       variant={props.variant || "persistent"}
       anchor="left"
       open={props.open}
-    ></Component>
+    >
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexDirection: "column",
+          gap: "24px",
+          height : "100%",
+          paddingTop: "24px",
+          paddingBottom: "20px",
+        }}
+      >
+        {props.children}
+      </div>
+    </Component>
   );
 }
