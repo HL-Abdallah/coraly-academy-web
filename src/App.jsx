@@ -8,8 +8,10 @@ import Step2 from "./routes/signup/Step2";
 import ResetPassword from "./routes/reset-password/ResetPassword";
 import ResetEmailSent from "./routes/reset-password/ResetEmailSent";
 import ConfirmPassword from "./routes/reset-password/ConfirmPassword";
-import Board from "./routes/board/Board";
+import BoardLayout from "./routes/board/BoardLayout";
 import ErrorPage from "./routes/404/ErrorPage";
+import MainBoard from "./routes/board/MainBoard";
+import Process from "./routes/board/Process";
 
 function App() {
   return (
@@ -31,8 +33,9 @@ function App() {
             <Route path="email-sent" element={<ResetEmailSent />} />
             <Route path="confirm-password" element={<ConfirmPassword />} />
           </Route>
-          <Route path="/board" >
-            <Route index element={<Board />} />
+          <Route path="/board" element={<BoardLayout />} >
+            <Route index element={<MainBoard/>} />
+            <Route path=":process" element={<Process/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

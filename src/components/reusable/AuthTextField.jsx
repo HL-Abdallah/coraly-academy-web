@@ -4,7 +4,7 @@ import { TextField } from "@mui/material";
 const AuthTextField = styled(TextField, { label: "AuthTextField" })(
   ({ theme }) => ({
     "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderColor: "#04385B",
+      borderColor: "#04385A",
       borderRadius: "8px",
     },
     "& label.Mui-focused ": {
