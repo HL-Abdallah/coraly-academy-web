@@ -1,7 +1,7 @@
 import { IconButton } from "@mui/material";
 
 const CustomIconButton = (props) => {
-  const PREFERRED_SIZE = props.prefSize || "24px";
+  const PREFERRED_SIZE = props.prefsize || "24px";
 
   return (
     <IconButton
@@ -12,8 +12,8 @@ const CustomIconButton = (props) => {
     >
       <img
         {...props}
-        width={props.prefSize ? PREFERRED_SIZE : null}
-        height={props.prefSize ? PREFERRED_SIZE : null}
+        width={props.prefsize ? PREFERRED_SIZE : null}
+        height={props.prefsize ? PREFERRED_SIZE : null}
       />
     </IconButton>
   );

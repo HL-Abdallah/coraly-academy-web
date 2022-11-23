@@ -1,12 +1,35 @@
-import { Button, Dialog, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  Dialog,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+  Typography,
+  IconButton,
+} from "@mui/material";
 import ProcessCard from "../../components/reusable/ProcessCard";
 import { processList } from "../../data/process";
 import newProcess from "/icons/process/new-process.png";
 import { useState } from "react";
+import CircleIcon from "@mui/icons-material/Circle";
+import { useNavigate } from "react-router";
 
 const MainBoard = () => {
+  const navigate = useNavigate();
   const [dialogOpen, setDialogOpen] = useState(false);
-
+  const [color, setColor] = useState("");
+  const [processname, setProcessname] = useState("");
+  const colors = [
+    "#47BDFF",
+    "#FF47B5",
+    "#FF9F47",
+    "#6C47FF",
+    "#2EF1CE",
+    "#F6D524",
+    "#E547FF",
+  ];
   return (
     <div
       style={{
@@ -79,13 +102,17 @@ const MainBoard = () => {
         </div>
         {processList.map((item) => {
           return (
-            <ProcessCard
+            <div
               key={item.processName}
-              processName={item.processName}
-              shopping={item.shopping}
-              private={item.private}
-              bgColor={item.bgColor}
-            />
+              onClick={() => navigate(item.processName)}
+            >
+              <ProcessCard
+                processName={item.processName}
+                shopping={item.shopping}
+                private={item.private}
+                bgColor={item.bgColor}
+              />
+            </div>
           );
         })}
       </div>
@@ -123,8 +150,33 @@ const MainBoard = () => {
               gap: "24px",
             }}
           >
-            <TextField label="Process name" fullWidth />
-            <TextField label="Color" fullWidth />
+            <TextField
+              label="Process name"
+              fullWidth
+              value={processname}
+              onChange={(e) => setProcessname(e.target.value)}
+            />
+            <FormControl>
+              <InputLabel>Color</InputLabel>
+              <Select
+                value={color}
+                label="Color"
+                onChange={(e) => {
+                  setColor(e.target.value);
+                }}
+              >
+                <MenuItem value={""}>
+                  <CircleIcon sx={{ color: "grey", mr: 2 }} />
+                  <b>No Color</b>
+                </MenuItem>
+                {colors.map((color) => (
+                  <MenuItem value={color} key={color}>
+                    <CircleIcon sx={{ color: color, mr: 2 }} />
+                    <b>{color}</b>
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
           </div>
           <div
             id="new-process-bot-section"
@@ -135,7 +187,18 @@ const MainBoard = () => {
               gap: "24px",
             }}
           >
-            <Button color="error" variant="outlined">
+            <Button
+              variant="outlined"
+              sx={{
+                color: "#04385A",
+                backgroundColor: "white",
+                "&:hover": {
+                  color: "#04385A !important",
+                  backgroundColor: "white",
+                },
+              }}
+              onClick={() => setDialogOpen(false)}
+            >
               Annulla
             </Button>
             <Button
@@ -147,6 +210,15 @@ const MainBoard = () => {
                   color: "#white",
                   backgroundColor: "#2CCFBC",
                 },
+              }}
+              onClick={() => {
+                processList.push({
+                  processName: processname,
+                  shopping: false,
+                  private: false,
+                  bgColor: color,
+                });
+                setDialogOpen(false);
               }}
             >
               Crea

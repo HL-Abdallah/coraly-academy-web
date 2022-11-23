@@ -6,7 +6,7 @@ import processIcon2 from "/icons/process/process-icon-2.png";
 import { Box } from "@mui/material";
 
 const ProcessCard = (props) => {
-    let BG_COLOR = props.bgColor || "grey" ;
+  let BG_COLOR = props.bgColor || "grey";
   return (
     <Box
       sx={{
@@ -17,6 +17,7 @@ const ProcessCard = (props) => {
         justifyContent: "flex-start",
         flexDirection: "column",
         backgroundColor: BG_COLOR,
+        cursor: "pointer",
       }}
     >
       <div

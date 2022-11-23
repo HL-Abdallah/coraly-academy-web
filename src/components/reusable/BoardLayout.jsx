@@ -61,7 +61,7 @@ const BoardLayout = ({ children }) => {
             <CustomIconButton src={img6} alt="Menu icon" />
           </div>
         </div>
-        <CustomIconButton src={coralyLogo} alt="Menu icon" prefSize="27px" />
+        <CustomIconButton src={coralyLogo} alt="Menu icon" prefsize="27px" />
       </CustomDrawer>
       <div
       
