@@ -18,6 +18,7 @@ const ProcessCard = (props) => {
         flexDirection: "column",
         backgroundColor: BG_COLOR,
         cursor: "pointer",
+        borderRadius: "8px",
       }}
     >
       <div

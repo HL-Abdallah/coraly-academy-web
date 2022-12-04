@@ -46,7 +46,13 @@ const ResetPassword = () => {
         />
         <MasterButton
           myBackgroundColor="#F93E6C"
-          disabled={data.length === 0}
+          disabled={
+            !String(data)
+              .toLowerCase()
+              .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+              )
+          }
           onClick={() => navigate("email-sent")}
         >
           Reset Password

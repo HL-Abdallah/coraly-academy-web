@@ -9,12 +9,15 @@ const CustomIconButton = (props) => {
         width: PREFERRED_SIZE,
         height: PREFERRED_SIZE,
       }}
+      onClick={props.onClick}
     >
       <img
-        {...props}
+        src={props.src}
+        alt={props.alt}
         width={props.prefsize ? PREFERRED_SIZE : null}
         height={props.prefsize ? PREFERRED_SIZE : null}
       />
+      {props.children}
     </IconButton>
   );
 };
