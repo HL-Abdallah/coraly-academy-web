@@ -72,7 +72,7 @@ const myCol5 = (
       gap: "4px",
     }}
   >
-    <Avatar sx={{ bgcolor: "#04385A", width: 30, height: 30 }}>AD</Avatar>
+    <Avatar sx={{ bgcolor: "#04385A",width: "30px" ,height : "30px", fontSize : "10px" }}>AD</Avatar>
     Alessandro Durni
   </div>
 );

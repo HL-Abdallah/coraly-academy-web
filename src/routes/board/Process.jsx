@@ -35,6 +35,7 @@ import { useState } from "react";
 import { TextFields } from "@mui/icons-material";
 import SettingsGrid from "../../components/one-off/SettingsGrid";
 import ProcessDialog from "../../components/one-off/ProcessDialog";
+import MyTableCell from "../../components/reusable/MyTableCell";
 
 const Process = () => {
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -119,7 +120,6 @@ const Process = () => {
         }}
       >
         <img src={groupBy} alt="oo" />
-        <br />
         <Table>
           <TableBody>
             {details.map((item) => {
@@ -128,13 +128,13 @@ const Process = () => {
                   key={Math.random()}
                   onClick={() => setProcessItemOpen(true)}
                 >
-                  <TableCell>{`           `}</TableCell>
-                  <TableCell>{item.col1}</TableCell>
-                  <TableCell>{item.col2}</TableCell>
-                  <TableCell>{item.col3}</TableCell>
-                  <TableCell>{item.col4}</TableCell>
-                  <TableCell>{item.col5}</TableCell>
-                  <TableCell>{item.col6}</TableCell>
+                  <MyTableCell>{`           `}</MyTableCell>
+                  <MyTableCell>{item.col1}</MyTableCell>
+                  <MyTableCell>{item.col2}</MyTableCell>
+                  <MyTableCell>{item.col3}</MyTableCell>
+                  <MyTableCell>{item.col4}</MyTableCell>
+                  <MyTableCell>{item.col5}</MyTableCell>
+                  <MyTableCell>{item.col6}</MyTableCell>
                 </TableRow>
               );
             })}
